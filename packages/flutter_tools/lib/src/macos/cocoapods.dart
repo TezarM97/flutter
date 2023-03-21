@@ -68,7 +68,7 @@ enum CocoaPodsStatus {
   brokenInstall,
 }
 
-const Version cocoaPodsMinimumVersion = Version.withText(1, 9, 0, '1.9.0');
+const Version cocoaPodsMinimumVersion = Version.withText(1, 10, 0, '1.10.0');
 const Version cocoaPodsRecommendedVersion = Version.withText(1, 11, 0, '1.11.0');
 
 /// Cocoapods is a dependency management solution for iOS and macOS applications.
@@ -362,7 +362,11 @@ class CocoaPods {
         emphasis: true,
       );
     } else if ((stderr.contains('ffi_c.bundle') || stderr.contains('/ffi/')) &&
+<<<<<<< HEAD
         _operatingSystemUtils.hostPlatform == HostPlatform.darwin_arm) {
+=======
+        _operatingSystemUtils.hostPlatform == HostPlatform.darwin_arm64) {
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       // https://github.com/flutter/flutter/issues/70796
       UsageEvent(
         'pod-install-failure',
@@ -371,7 +375,7 @@ class CocoaPods {
       ).send();
       _logger.printError(
         'Error: To set up CocoaPods for ARM macOS, run:\n'
-        '  arch -x86_64 sudo gem install ffi\n',
+        '  sudo gem uninstall ffi && sudo gem install ffi -- --enable-libffi-alloc\n',
         emphasis: true,
       );
     }

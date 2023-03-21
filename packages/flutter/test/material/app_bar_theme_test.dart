@@ -45,7 +45,11 @@ void main() {
       expect(iconTheme.data, IconThemeData(color: theme.colorScheme.onSurface, size: 24));
       expect(actionsIconTheme.data, IconThemeData(color: theme.colorScheme.onSurfaceVariant, size: 24));
       expect(actionIconText.text.style!.color, Colors.black);
+<<<<<<< HEAD
       expect(text.style, Typography.material2021().englishLike.bodyText2!.merge(Typography.material2021().black.bodyText2).copyWith(color: theme.colorScheme.onSurface));
+=======
+      expect(text.style, Typography.material2021().englishLike.bodyMedium!.merge(Typography.material2021().black.bodyMedium).copyWith(color: theme.colorScheme.onSurface));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       expect(tester.getSize(find.byType(AppBar)).height, kToolbarHeight);
       expect(tester.getSize(find.byType(AppBar)).width, 800);
     } else {
@@ -58,7 +62,11 @@ void main() {
       expect(iconTheme.data, const IconThemeData(color: Colors.white));
       expect(actionsIconTheme.data, const IconThemeData(color: Colors.white));
       expect(actionIconText.text.style!.color, Colors.white);
+<<<<<<< HEAD
       expect(text.style, Typography.material2014().englishLike.bodyText2!.merge(Typography.material2014().white.bodyText2));
+=======
+      expect(text.style, Typography.material2014().englishLike.bodyMedium!.merge(Typography.material2014().white.bodyMedium));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       expect(tester.getSize(find.byType(AppBar)).height, kToolbarHeight);
       expect(tester.getSize(find.byType(AppBar)).width, 800);
     }
@@ -109,7 +117,7 @@ void main() {
       foregroundColor: Colors.black,
     );
 
-    Widget _buildWithBackwardsCompatibility([bool? enabled]) => MaterialApp(
+    Widget buildWithBackwardsCompatibility([bool? enabled]) => MaterialApp(
       theme: ThemeData(appBarTheme: appBarTheme),
       home: Scaffold(body: CustomScrollView(
         slivers: <Widget>[
@@ -125,17 +133,17 @@ void main() {
     );
 
     // Backwards compatibility enabled, AppBar should be built with true.
-    await tester.pumpWidget(_buildWithBackwardsCompatibility(true));
+    await tester.pumpWidget(buildWithBackwardsCompatibility(true));
     AppBar appBar = tester.widget<AppBar>(find.byType(AppBar));
     expect(appBar.backwardsCompatibility, true);
 
     // Backwards compatibility disabled, AppBar should be built with false.
-    await tester.pumpWidget(_buildWithBackwardsCompatibility(false));
+    await tester.pumpWidget(buildWithBackwardsCompatibility(false));
     appBar = tester.widget<AppBar>(find.byType(AppBar));
     expect(appBar.backwardsCompatibility, false);
 
     // Backwards compatibility unspecified, AppBar should be built with null.
-    await tester.pumpWidget(_buildWithBackwardsCompatibility());
+    await tester.pumpWidget(buildWithBackwardsCompatibility());
     appBar = tester.widget<AppBar>(find.byType(AppBar));
     expect(appBar.backwardsCompatibility, null);
 
@@ -284,7 +292,11 @@ void main() {
       // - surface tint color: ColorScheme.surfaceTint
       // - background color: ColorScheme.surface
       // - foreground color: ColorScheme.onSurface
+<<<<<<< HEAD
       // - actions text: style bodyText2, foreground color
+=======
+      // - actions text: style bodyMedium, foreground color
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       // - status bar brightness: light (based on color scheme brightness)
       {
         await tester.pumpWidget(buildFrame(lightTheme));
@@ -303,7 +315,11 @@ void main() {
         expect(iconTheme.data.color, lightTheme.colorScheme.onSurface);
         expect(actionsIconTheme.data.color, lightTheme.colorScheme.onSurface);
         expect(actionIconText.text.style!.color, lightTheme.colorScheme.onSurface);
+<<<<<<< HEAD
         expect(text.style, Typography.material2021().englishLike.bodyText2!.merge(Typography.material2021().black.bodyText2).copyWith(color: lightTheme.colorScheme.onSurface));
+=======
+        expect(text.style, Typography.material2021().englishLike.bodyMedium!.merge(Typography.material2021().black.bodyMedium).copyWith(color: lightTheme.colorScheme.onSurface));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       }
 
       // M3 AppBar defaults for dark themes:
@@ -312,7 +328,11 @@ void main() {
       // - surface tint color: ColorScheme.surfaceTint
       // - background color: ColorScheme.surface
       // - foreground color: ColorScheme.onSurface
+<<<<<<< HEAD
       // - actions text: style bodyText2, foreground color
+=======
+      // - actions text: style bodyMedium, foreground color
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       // - status bar brightness: dark (based on background color)
       {
         await tester.pumpWidget(buildFrame(ThemeData.from(colorScheme: const ColorScheme.dark())));
@@ -332,7 +352,11 @@ void main() {
         expect(iconTheme.data.color, darkTheme.colorScheme.onSurface);
         expect(actionsIconTheme.data.color, darkTheme.colorScheme.onSurface);
         expect(actionIconText.text.style!.color, darkTheme.colorScheme.onSurface);
+<<<<<<< HEAD
         expect(text.style, Typography.material2021().englishLike.bodyText2!.merge(Typography.material2021().black.bodyText2).copyWith(color: darkTheme.colorScheme.onSurface));
+=======
+        expect(text.style, Typography.material2021().englishLike.bodyMedium!.merge(Typography.material2021().black.bodyMedium).copyWith(color: darkTheme.colorScheme.onSurface));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       }
     } else {
       // AppBar defaults for light themes:
@@ -341,7 +365,11 @@ void main() {
       // - surface tint color: null
       // - background color: ColorScheme.primary
       // - foreground color: ColorScheme.onPrimary
+<<<<<<< HEAD
       // - actions text: style bodyText2, foreground color
+=======
+      // - actions text: style bodyMedium, foreground color
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       // - status bar brightness: light (based on color scheme brightness)
       {
         await tester.pumpWidget(buildFrame(lightTheme));
@@ -360,7 +388,11 @@ void main() {
         expect(iconTheme.data.color, lightTheme.colorScheme.onPrimary);
         expect(actionsIconTheme.data.color, lightTheme.colorScheme.onPrimary);
         expect(actionIconText.text.style!.color, lightTheme.colorScheme.onPrimary);
+<<<<<<< HEAD
         expect(text.style, Typography.material2014().englishLike.bodyText2!.merge(Typography.material2014().black.bodyText2).copyWith(color: lightTheme.colorScheme.onPrimary));
+=======
+        expect(text.style, Typography.material2014().englishLike.bodyMedium!.merge(Typography.material2014().black.bodyMedium).copyWith(color: lightTheme.colorScheme.onPrimary));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       }
 
       // AppBar defaults for dark themes:
@@ -369,7 +401,11 @@ void main() {
       // - surface tint color: null
       // - background color: ColorScheme.surface
       // - foreground color: ColorScheme.onSurface
+<<<<<<< HEAD
       // - actions text: style bodyText2, foreground color
+=======
+      // - actions text: style bodyMedium, foreground color
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       // - status bar brightness: dark (based on background color)
       {
         await tester.pumpWidget(buildFrame(darkTheme));
@@ -389,7 +425,11 @@ void main() {
         expect(iconTheme.data.color, darkTheme.colorScheme.onSurface);
         expect(actionsIconTheme.data.color, darkTheme.colorScheme.onSurface);
         expect(actionIconText.text.style!.color, darkTheme.colorScheme.onSurface);
+<<<<<<< HEAD
         expect(text.style, Typography.material2014().englishLike.bodyText2!.merge(Typography.material2014().black.bodyText2).copyWith(color: darkTheme.colorScheme.onSurface));
+=======
+        expect(text.style, Typography.material2014().englishLike.bodyMedium!.merge(Typography.material2014().black.bodyMedium).copyWith(color: darkTheme.colorScheme.onSurface));
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
       }
     }
   });

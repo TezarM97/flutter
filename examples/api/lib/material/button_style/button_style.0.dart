@@ -2,7 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+<<<<<<< HEAD
 // Flutter code sample for ElevatedButton
+=======
+/// Flutter code sample for [ElevatedButton].
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
 
 import 'package:flutter/material.dart';
 
@@ -11,7 +15,11 @@ void main() {
 }
 
 class ButtonApp extends StatelessWidget {
+<<<<<<< HEAD
   const ButtonApp({Key? key}) : super(key: key);
+=======
+  const ButtonApp({super.key});
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +34,11 @@ class ButtonApp extends StatelessWidget {
 }
 
 class ButtonTypesExample extends StatelessWidget {
+<<<<<<< HEAD
   const ButtonTypesExample({Key? key}) : super(key: key);
+=======
+  const ButtonTypesExample({super.key});
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +57,11 @@ class ButtonTypesExample extends StatelessWidget {
 }
 
 class ButtonTypesGroup extends StatelessWidget {
+<<<<<<< HEAD
   const ButtonTypesGroup({ Key? key, required this.enabled }) : super(key: key);
+=======
+  const ButtonTypesGroup({ super.key, required this.enabled });
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
 
   final bool enabled;
 
@@ -58,6 +74,7 @@ class ButtonTypesGroup extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           ElevatedButton(onPressed: onPressed, child: const Text('Elevated')),
+<<<<<<< HEAD
 
           // Use an ElevatedButton with specific style to implement the
           // 'Filled' type.
@@ -87,6 +104,11 @@ class ButtonTypesGroup extends StatelessWidget {
 
           OutlinedButton(onPressed: onPressed, child: const Text('Outlined')),
 
+=======
+          FilledButton(onPressed: onPressed, child: const Text('Filled')),
+          FilledButton.tonal(onPressed: onPressed, child: const Text('Filled Tonal')),
+          OutlinedButton(onPressed: onPressed, child: const Text('Outlined')),
+>>>>>>> 2ad6cd72c040113b47ee9055e722606a490ef0da
           TextButton(onPressed: onPressed, child: const Text('Text')),
         ],
       ),
